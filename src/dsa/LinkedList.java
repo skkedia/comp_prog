@@ -25,6 +25,10 @@ public class LinkedList {
 		print(head);
 		head = insertAtEnd(head, 15);
 		head = insertAtEnd(head, 45);
+		head = insertAtEnd(head, 25);
+		head = insertAtEnd(head, 35);
+		head = insertAtEnd(head, 55);
+		head = insertAtEnd(head, 65);
 		print(head);
 		
 		head = deleteAtBeg(head);
@@ -33,11 +37,58 @@ public class LinkedList {
 		
 		head = deleteAtEnd(head);
 		head = deleteAtEnd(head);
+		print(head);
+		
+		Integer pos = searchElement(head, 35);
+		
+		System.out.println(pos);
+		
+		pos = searchElementRecusively(head, 36);
+		
+		pos = searchElementRecusively(head, -1);
+		pos = searchElementRecusively(head, 10);
+		pos = searchElementRecusively(head, 100);
+		pos = searchElementRecusively(head, 45);
+		head = insertAtEnd(head, -1);
+		pos = searchElementRecusively(head, -1);
+		
+		System.out.println(pos);
+		
 		print(head);
 		
 		System.out.println(head.next.next.data);
 	}
 	
+	private static Integer searchElementRecusively(Node head, Integer ele) {
+		Integer pos = 0;
+		if(head == null) {
+			return -1;
+		}
+		pos++;
+		if(head.data.equals(ele)) {
+			return pos;
+		}
+		head = head.next;
+		Integer t = searchElementRecusively(head, ele);
+		return t.equals(-1) ? -1 : pos + t;
+		
+	}
+
+	private static Integer searchElement(Node head, Integer ele) {
+		if(head == null) {
+			return -1;
+		}
+		Integer pos = 0;
+		while(head != null) {
+			pos++;
+			if(head.data.equals(ele)) {
+				return pos;
+			}
+			head = head.next;
+		}
+		return -1;
+	}
+
 	static Node deleteAtEnd (Node head) {
 		if(head == null || head.next ==null) {
 			System.out.println("NULL");
