@@ -50,6 +50,8 @@ public class DoublyLinkedList {
 			return head;
 		}
 		
+		
+		
 		if(head == null) {
 			return new DoubleNode(i);
 		}
