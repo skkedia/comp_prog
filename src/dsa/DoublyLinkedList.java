@@ -20,6 +20,9 @@ public class DoublyLinkedList {
 		DoubleNode temp1 = new DoubleNode(20);
 		DoubleNode temp2 = new DoubleNode(30);
 		
+		
+		
+		
 		head.next = temp1;
 		temp1.prev = head;
 		temp1.next = temp2;
