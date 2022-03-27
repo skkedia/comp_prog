@@ -9,7 +9,6 @@ public class Max01EvSwap_Mar2022 {
 		Integer t = sc.nextInt();
 		sc.nextLine();
 		while (t > 0) {
-			Integer s = null;
 			
 		}
 		sc.close();
