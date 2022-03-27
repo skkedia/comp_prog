@@ -1,11 +1,7 @@
 package leetcode.singlelinkedList;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class RemoveDuplicateElementsV2 {
-
-	
 	
 	private static ListNode removeDuplicateElementsV2(ListNode head) {
 		ListNode curr = new ListNode(0, head);
