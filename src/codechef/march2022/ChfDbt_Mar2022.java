@@ -1,4 +1,4 @@
-package codechef;
+package codechef.march2022;
 
 import java.util.Scanner;
 
