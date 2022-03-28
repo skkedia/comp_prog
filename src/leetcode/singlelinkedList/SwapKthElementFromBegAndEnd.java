@@ -1,25 +1,7 @@
 package leetcode.singlelinkedList;
 
-public class MergeInBetweenLists {
+public class SwapKthElementFromBegAndEnd {
 	
-	public static ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
-		ListNode left = list1;
-        for (int i = 1; i < a; i++)
-            left = left.next;
-        
-        ListNode middle = left;
-        for (int i = a; i <= b; i++)
-            middle = middle.next;
-        
-		left.next = list2;
-        while (list2.next != null)
-            list2 = list2.next;
-        
-        list2.next = middle.next;
-        return list1;
-        
-    }
-
 	public static void main(String[] args) {
 		ListNode n1 = new ListNode(1);
 		ListNode n2 = new ListNode(2);
@@ -40,10 +22,31 @@ public class MergeInBetweenLists {
 		ListNode n0 = new ListNode(411);
 		n8.next = n9;
 		n9.next = n0;
-		ListNode nss = mergeInBetween(n1, 2, 3, n8);
+		ListNode nss = swap(n1, 2);
 		print(nss);
 	}
 	
+	private static ListNode swap(ListNode head, int k) {
+		
+		ListNode fast = head;
+		ListNode slow = head;
+		ListNode first = head;
+		
+		for(int i = 0; i < k -1 ; i++) {
+			fast = fast.next;
+		}
+		
+		first = fast;
+		while (fast.next != null) {
+			slow = slow.next;
+			fast = fast.next;
+		}
+		Integer temp = first.val;
+		first.val = slow.val;
+		slow.val = temp;
+		return head;
+	}
+
 	static void print(ListNode n) {
 		if(n == null) {
 			return;
@@ -52,6 +55,5 @@ public class MergeInBetweenLists {
 		n = n.next;
 		print(n);
 	}
-
 
 }
