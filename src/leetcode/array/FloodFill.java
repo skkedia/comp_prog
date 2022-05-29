@@ -6,6 +6,7 @@ public class FloodFill {
 	
 	public static int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
 		int orgColor = image[sr][sc];
+		if(orgColor != newColor)
 		fill(image, sr, sc, newColor, orgColor);
 		return image;
     }
