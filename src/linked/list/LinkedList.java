@@ -1,4 +1,4 @@
-package dsa;
+package linked.list;
 
 class Node {
 	Integer data = null;
